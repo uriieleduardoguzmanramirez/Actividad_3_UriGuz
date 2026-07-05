@@ -124,3 +124,10 @@ Los componentes se generan desde `miniui.js`, por lo que pueden reutilizarse con
 
 Esta actividad permitió crear una librería JavaScript reutilizable con componentes visuales interactivos.  
 El modal y las notificaciones toast reaccionan a acciones del usuario y pueden usarse con distintos mensajes sin reescribir su estructura.
+
+
+## LINK DE VIDEO 
+https://drive.google.com/drive/folders/1LIqNQclsEc5FNklxMe_tca6WSQenGlxE?usp=drive_link
+
+
+
