@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3 - Componentes Visuales con JS</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main class="contenedor">
+
+        <section class="presentacion">
+            <h1>Panel de Avisos Académicos</h1>
+            <h2>Librería de Componentes Visuales con JavaScript</h2>
+
+            <p>
+                Este panel utiliza la librería <strong>miniui.js</strong> para mostrar
+                ventanas emergentes y notificaciones visuales reutilizables.
+            </p>
+        </section>
+
+        <section class="tarjeta">
+            <div class="encabezado-tarjeta">
+                <img src="img/aviso.jpg" alt="Icono de aviso académico" class="icono-tarjeta">
+                <h2>Avisos importantes</h2>
+            </div>
+
+            <p>
+                En esta sección se muestran avisos académicos mediante ventanas modales.
+                El mismo componente puede reutilizarse con diferente título, mensaje y botón.
+            </p>
+
+            <button id="btnAvisoInscripcion">Aviso de inscripción</button>
+            <button id="btnRequisitos">Ver requisitos</button>
+        </section>
+
+        <section class="tarjeta">
+            <div class="encabezado-tarjeta">
+                <img src="img/notificacion.png" alt="Icono de notificación" class="icono-tarjeta">
+                <h2>Notificaciones del sistema</h2>
+            </div>
+
+            <p>
+                Las notificaciones tipo toast sirven para informar al usuario sobre el resultado
+                de una acción sin interrumpir completamente la navegación.
+            </p>
+
+            <div class="grupo-botones">
+                <button id="btnSolicitudEnviada">Solicitud enviada</button>
+                <button id="btnErrorDocumentos">Error en documentos</button>
+                <button id="btnPendiente">Trámite pendiente</button>
+                <button id="btnInfoHorario">Horario de atención</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/miniui.js"></script>
+
+    <script>
+        document.getElementById("btnAvisoInscripcion").addEventListener("click", function() {
+            MiniUI.mostrarModal({
+                titulo: "Aviso de inscripción",
+                mensaje: "El periodo de inscripción estará disponible del 10 al 15 de julio. Recuerda revisar tus materias antes de enviar tu solicitud.",
+                textoBoton: "Entendido"
+            });
+        });
+
+        document.getElementById("btnRequisitos").addEventListener("click", function() {
+            MiniUI.mostrarModal({
+                titulo: "Requisitos del trámite",
+                mensaje: "Para realizar el trámite necesitas tu número de control, correo institucional y credencial vigente.",
+                textoBoton: "Cerrar"
+            });
+        });
+
+        document.getElementById("btnSolicitudEnviada").addEventListener("click", function() {
+            MiniUI.mostrarToast({
+                titulo: "Solicitud enviada",
+                mensaje: "Tu solicitud fue registrada correctamente.",
+                tipo: "exito",
+                duracion: 3500
+            });
+        });
+
+        document.getElementById("btnErrorDocumentos").addEventListener("click", function() {
+            MiniUI.mostrarToast({
+                titulo: "Documentos incompletos",
+                mensaje: "Falta adjuntar una identificación válida.",
+                tipo: "error",
+                duracion: 3500
+            });
+        });
+
+        document.getElementById("btnPendiente").addEventListener("click", function() {
+            MiniUI.mostrarToast({
+                titulo: "Revisión pendiente",
+                mensaje: "Tu trámite aún se encuentra en proceso de revisión.",
+                tipo: "advertencia",
+                duracion: 3500
+            });
+        });
+
+        document.getElementById("btnInfoHorario").addEventListener("click", function() {
+            MiniUI.mostrarToast({
+                titulo: "Horario de atención",
+                mensaje: "El horario de atención es de lunes a viernes de 9:00 a 14:00 horas.",
+                tipo: "info",
+                duracion: 3500
+            });
+        });
+    </script>
+
+</body>
+</html>
